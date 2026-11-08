@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linux Admin - Week 2</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: sans-serif;
+      line-height: 1.6;
+      background: #000000;
+      color: #ffffff;
+    }
+    h1, h2 { color: #ff3333; }
+    a { color: #ff6666; }
+    .counter { font-size: 2em; font-weight: bold; color: #ff3333; }
+  </style>
+</head>
+<body>
+  <h1>My Little Linux Box - Week 2</h1>
+  <p>Still impending doom, now with a database.</p>
+
+  <h2>Visitor counter</h2>
+  <p>This page has been loaded
+    <span class="counter">{{ count }}</span>
+    time{{ "" if count == 1 else "s" }}.</p>
+
+  <h2>Source code</h2>
+  <p><a href="https://github.com/JapeJJ/linux-admin-viikko2">github.com/JapeJJ/linux-admin-viikko2</a></p>
+
+  <h2>Database</h2>
+  <p>MySQL is running on the same server.It only accepts a connection from
+   localhost. The app uses laskuri database, and mySQL starts automatically when the server boots.</p>
+
+  <h2>How the counter is stored</h2>
+  <p>Python app tells mySQL to add 1 to the count, then asks mySQL for the current count and inputs it to HTML.
+   mySQL saves data to a disk, so the number doesn't reset after a server restart.</p>
+
+  <h2>Reboot test</h2>
+  <p>---</p>
+</body>
+</html>
