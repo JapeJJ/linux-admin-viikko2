@@ -1,7 +1,7 @@
 import os
 
 import pymysql
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -27,14 +27,5 @@ def index():
     finally:
         conn.close()
 
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Week 2</title>
-</head>
-<body>
-  <h1>Week 2</h1>
-  <p>This page has been visited {count} times.</p>
-</body>
-</html>"""
+    return render_template("index.html", count=count)
+
